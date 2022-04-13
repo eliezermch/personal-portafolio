@@ -1,0 +1,41 @@
+:root {
+  --big-font-size: 3rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+}
+
+.home__content {
+  grid-template-columns: max-content 1fr 1fr;
+}
+
+.home__data {
+  grid-column: initial;
+}
+
+.home__img {
+  order: 1;
+  justify-self: center;
+}
+
+.about__container,
+.skills__container,
+.contact__container,
+.footer__container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.qualification__sections {
+  display: grid;
+  grid-template-columns: 0.6fr;
+  justify-content: center;
+}
+.portfolio__data-white h3,
+.portfolio__data-white p,
+.portfolio__data h3,
+.portfolio__data p {
+  display: block;
+}
