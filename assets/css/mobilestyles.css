@@ -356,6 +356,7 @@ a {
 .button--flex {
   display: inline-flex;
   align-items: center;
+  border: 0;
 }
 .button--flex:hover {
   color: #fff;

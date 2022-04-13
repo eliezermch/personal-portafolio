@@ -164,3 +164,17 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+////////////////////////// Clean inputs /////////////////////////
+
+const btn = document.getElementById("btn");
+
+btn.addEventListener("click", function handleClick(event) {
+  event.preventDefault();
+
+  const inputs = document.querySelectorAll(".contact__input");
+
+  inputs.forEach((input) => {
+    input.value = "";
+  });
+});
