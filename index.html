@@ -770,28 +770,32 @@
             </div>
           </div>
 
-          <form action="" class="contact__form grid">
+          <form
+            action="https://formsubmit.co/aec10f5372291e36ebe5cfc2fbc8d341"
+            method="POST"
+            class="contact__form grid"
+          >
             <div class="contact__inputs grid">
               <div class="contact__content">
-                <label for="" class="contact__label">Name</label>
-                <input type="text" class="contact__input" />
+                <label for="name" class="contact__label">Name</label>
+                <input type="text" name="name" class="contact__input" />
               </div>
 
               <div class="contact__content">
-                <label for="" class="contact__label">Email</label>
-                <input type="email" class="contact__input" />
+                <label for="email" class="contact__label">Email</label>
+                <input type="email" name="email" class="contact__input" />
               </div>
             </div>
 
             <div class="contact__content">
-              <label for="" class="contact__label">Project</label>
-              <input type="text" class="contact__input" />
+              <label for="subject" class="contact__label">Subject</label>
+              <input type="text" name="subject" class="contact__input" />
             </div>
 
             <div class="contact__content">
-              <label for="" class="contact__label">Message</label>
+              <label for="comments" class="contact__label">Message</label>
               <textarea
-                name=""
+                name="comments"
                 id=""
                 cols="0"
                 rows="7"
@@ -800,16 +804,19 @@
             </div>
 
             <div>
-              <button
-                id="btn"
-                type="button"
-                value="Submit"
-                class="button button--flex"
-              >
-                Send Message
-                <i class="uil uil-message button__icon"></i>
-              </button>
+              <input
+                type="submit"
+                value="Send Message"
+                class="button button--flex input--submit"
+              />
             </div>
+
+            <input
+              type="hidden"
+              name="_next"
+              value="https://eliezer-chirino.vercel.app/#contact"
+            />
+            <input type="hidden" name="_captcha" value="false" />
           </form>
         </div>
       </section>

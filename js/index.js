@@ -167,14 +167,20 @@ themeButton.addEventListener("click", () => {
 
 ////////////////////////// Clean inputs /////////////////////////
 
-const btn = document.getElementById("btn");
+// const input = document.querySelector(".input--submit");
+// const containerForm = document.querySelector(".contact__form");
 
-btn.addEventListener("click", function handleClick(event) {
-  event.preventDefault();
+// input.addEventListener("click", function handleClick(event) {
+//   event.preventDefault();
 
-  const inputs = document.querySelectorAll(".contact__input");
+//   const inputs = document.querySelectorAll(".contact__input");
 
-  inputs.forEach((input) => {
-    input.value = "";
-  });
-});
+//   inputs.forEach((input) => {
+//     input.value = "";
+//   });
+
+//   const successMessage = document.createElement("span");
+//   successMessage.classList.add("section__subtitle");
+//   successMessage.innerHTML = "Your message has been sent!";
+//   containerForm.appendChild(successMessage);
+// });
