@@ -709,6 +709,11 @@ a {
   visibility: visible;
 }
 
+.portfolio__container {
+  width: auto;
+  /* height: 600px; */
+}
+
 .carousel-indicators {
   margin-top: 1rem;
 }
@@ -751,10 +756,12 @@ a {
 
 .portfolio__img {
   /* width: 265px !important; */
+  height: 200px;
   border-radius: 0.5rem;
   display: flex;
   justify-self: center;
   align-items: center;
+  object-fit: cover;
 }
 
 .portfolio__title {

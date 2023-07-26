@@ -39,3 +39,7 @@
 .portfolio__data p {
   display: block;
 }
+
+.portfolio__img {
+  height: 300px;
+}
