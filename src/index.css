@@ -2,8 +2,8 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  /* padding: 0;
+  margin: 0; */
 }
 
 ul {
@@ -76,4 +76,14 @@ body {
   /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
   line-height: 1.5;
   height: 100vh;
+}
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 2rem;
+  height: var(--header-height);
+  z-index: var(--z-fixed);
 }

@@ -2,6 +2,8 @@
 import { Canvas } from '@react-three/fiber';
 import './App.css'
 import { Particles } from './components/Particles';
+import { Html } from '@react-three/drei';
+import { NavBar } from './components/NavBar';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -31,6 +33,10 @@ function App() {
           >
 
             <Particles />
+            
+            <Html  wrapperClass='navbar-wrapper' fullscreen>
+              <NavBar />
+            </Html>
 
             <ambientLight intensity={0.5} />
           </Canvas>
