@@ -6,6 +6,8 @@ import { NavBar } from './components/NavBar';
 import { Profile } from './components/Profile';
 import { skillsData } from './data/skillsData';
 import Card from './components/Card';
+import { Suspense } from 'react';
+import { Experience } from './components/PortfolioBook/PortafolioExperience';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -20,7 +22,6 @@ function App() {
           far: 4000,
           position: [-50, 320, 500],
         }}
-        className="w-full h-full"
         onCreated={(state) => {
           const _gl = state.gl.getContext();
           const pixelStorei = _gl.pixelStorei.bind(_gl);
@@ -35,7 +36,7 @@ function App() {
       >
         <Particles />
 
-        <Html wrapperClass="navbar-wrapper" fullscreen>
+        <Html wrapperClass="html-wrapper">
           <NavBar />
 
           <Profile />
@@ -55,6 +56,36 @@ function App() {
               ))}
             </div>
           </div>
+
+          {/* Portfolio Book Section - Seamlessly integrated */}
+          <section className="w-full py-16 px-4">
+            <div className="w-full mx-auto">
+              <h2 className="text-3xl font-bold text-white text-center mb-12">
+                Portfolio Book
+              </h2>
+              <div className="text-center text-gray-300 mb-8">
+                <p>Explore my interactive portfolio book</p>
+              </div>
+              <div className="h-[600px] w-full relative">
+                <Canvas
+                  camera={{
+                    fov: 45,
+                    near: 0.1,
+                    far: 100,
+                    position: [0, 2, 8],
+                  }}
+                  className="w-full h-full"
+                  style={{ background: 'transparent' }}
+                >
+                  <Suspense fallback={null}>
+                    <Experience />
+                  </Suspense>
+                  <ambientLight intensity={0.6} />
+                  <directionalLight position={[5, 5, 5]} intensity={0.8} />
+                </Canvas>
+              </div>
+            </div>
+          </section>
         </Html>
 
         <ambientLight intensity={0.5} />
