@@ -8,6 +8,7 @@ import { skillsData } from './data/skillsData';
 import Card from './components/Card';
 import { Suspense } from 'react';
 import { Experience } from './components/PortfolioBook/PortafolioExperience';
+import { Footer } from './components/Footer';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -86,6 +87,8 @@ function App() {
               </div>
             </div>
           </section>
+
+          <Footer />
         </Html>
 
         <ambientLight intensity={0.5} />
