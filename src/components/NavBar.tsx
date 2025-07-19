@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <nav className="w-full h-16 text-white flex items-center justify-center">
       <div className="bg-indigo-900/40 border border-white/10 rounded-lg py-6 mt-16 shadow-xl flex items-center justify-center px-8 gap-8 space-x-4">
-        <p>Eliezer Chirino</p>
+        <p className="hidden md:block">Eliezer Chirino</p>
         <ul className="flex gap-2 space-x-4">
           <li>
             <a

@@ -64,13 +64,6 @@ export const UI = () => {
             Back Cover
           </button>
         </div>
-
-        {/* Navigation Instructions */}
-        <div className="mt-4 text-center">
-          <p className="text-xs text-gray-400">
-            Click pages to navigate • Hover over pages for project details
-          </p>
-        </div>
       </div>
     </div>
   );

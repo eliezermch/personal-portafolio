@@ -3,8 +3,8 @@ import React from 'react';
 const Profile = () => {
   return (
     <div className="w-full flex items-center justify-center gap-4 mt-20">
-      <div className="max-w-4xl flex">
-        <div className="w-[50%] flex flex-col items-center justify-center gap-4 text-center">
+      <div className="max-w-4xl gap-8 lg:gap-0 flex flex-col lg:flex-row items-center justify-between px-8">
+        <div className="w-full lg:w-[50%] flex flex-col items-center justify-center gap-4 text-center">
           <h1 className="text-5xl text font-bold text-indigo-600">
             Eliezer Chirino
           </h1>
@@ -16,7 +16,7 @@ const Profile = () => {
             challenge.
           </p>
         </div>
-        <div className="w-[50%] flex flex-col items-center justify-center gap-4 text-center">
+        <div className="w-full lg:w-[50%] flex flex-col items-center justify-center gap-4 text-center">
           <img
             className="w-[280px] h-[280px] rounded-[50%] object-cover"
             src="/assets/headshot/eliezer_headshot.JPG"

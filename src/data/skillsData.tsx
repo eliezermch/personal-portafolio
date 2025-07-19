@@ -15,7 +15,7 @@ export const skillsData = [
   {
     title: 'Next.js',
     description:
-      'Full-stack React framework for production-ready applications with SSR and SSG capabilities.',
+      '+3 years of experience with Next.js - Full-stack React framework for production-ready applications with SSR and SSG capabilities.',
     icon: <IconBrandNextjs size={28} />,
     shadowColor: '#ffffff',
     glowColor: '#000000',
@@ -23,7 +23,7 @@ export const skillsData = [
   {
     title: 'TypeScript',
     description:
-      'Strongly typed programming language that builds on JavaScript with static type definitions.',
+      '+3 years of experience with TypeScript - Strongly typed programming language that builds on JavaScript with static type definitions.',
     icon: <IconBrandTypescript size={28} />,
     shadowColor: '#3178c6',
     glowColor: '#3178c6',
@@ -31,7 +31,7 @@ export const skillsData = [
   {
     title: 'Tailwind CSS',
     description:
-      'Utility-first CSS framework for rapidly building custom user interfaces.',
+      '+2 years of experience with Tailwind CSS - Utility-first CSS framework for rapidly building custom user interfaces.',
     icon: <IconBrandTailwind size={28} />,
     shadowColor: '#06b6d4',
     glowColor: '#06b6d4',
@@ -39,7 +39,7 @@ export const skillsData = [
   {
     title: 'React',
     description:
-      'JavaScript library for building user interfaces with component-based architecture.',
+      '+3 years of experience with React - JavaScript library for building user interfaces with component-based architecture.',
     icon: <IconBrandReact size={28} />,
     shadowColor: '#61dafb',
     glowColor: '#61dafb',
@@ -55,7 +55,7 @@ export const skillsData = [
   {
     title: 'Node.js',
     description:
-      "JavaScript runtime built on Chrome's V8 engine for server-side development.",
+      "+2 years of experience with Node.js - JavaScript runtime built on Chrome's V8 engine for server-side development.",
     icon: <IconBrandNodejs size={28} />,
     shadowColor: '#339933',
     glowColor: '#339933',
@@ -63,7 +63,7 @@ export const skillsData = [
   {
     title: 'Python',
     description:
-      'High-level programming language for data science, AI, and backend development.',
+      '+1 year of experience with Python - High-level programming language for data science, AI, and backend development.',
     icon: <IconBrandPython size={28} />,
     shadowColor: '#3776ab',
     glowColor: '#3776ab',
