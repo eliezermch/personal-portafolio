@@ -1,10 +1,12 @@
 import { atom, useAtom } from 'jotai';
 
 const pictures = [
+  'fresco-design-img',
   'bike-img',
   'polyjoule-img',
-  'fresco-design-img',
-  'fresco-3d-library',
+  'fresco-3d-img',
+  'nasa-app',
+  'netflix-clone',
 ];
 
 export const pageAtom = atom(0);
