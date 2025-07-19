@@ -1,4 +1,4 @@
-import { useCursor, useTexture, Html } from '@react-three/drei';
+import { useCursor, useTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useAtom } from 'jotai';
 import { easing } from 'maath';
@@ -18,30 +18,6 @@ import {
 } from 'three';
 import { degToRad } from 'three/src/math/MathUtils.js';
 import { pageAtom, pages } from './PortafolioUI';
-
-// Page descriptions for hover tooltips
-const pageDescriptions = [
-  {
-    title: 'Portfolio Cover',
-    description: 'Welcome to my interactive portfolio book',
-  },
-  {
-    title: 'Bike Project',
-    description: 'Modern bicycle e-commerce platform with React',
-  },
-  {
-    title: 'Polyjoule',
-    description: 'Energy management dashboard with TypeScript',
-  },
-  {
-    title: 'Fresco Design',
-    description: 'Creative design studio website with animations',
-  },
-  {
-    title: 'Back Cover',
-    description: 'Thank you for exploring my work!',
-  },
-];
 
 const easingFactor = 0.5; // Controls the speed of the easing
 const easingFactorFold = 0.3; // Controls the speed of the easing
@@ -280,12 +256,6 @@ const Page = ({
   const [highlighted, setHighlighted] = useState(false);
   useCursor(highlighted);
 
-  // Get description for current page
-  const currentPageDescription = pageDescriptions[number] || {
-    title: 'Page',
-    description: 'Portfolio content',
-  };
-
   return (
     <group
       {...props}
@@ -309,31 +279,6 @@ const Page = ({
         ref={skinnedMeshRef}
         position-z={-number * PAGE_DEPTH + page * PAGE_DEPTH}
       />
-
-      {/* Hover Description Tooltip */}
-      {highlighted && (
-        <Html
-          position={[0.8, 0.6, 0]}
-          center
-          transform={false}
-          occlude={false}
-          className="pointer-events-none"
-          sprite
-        >
-          <div className="bg-slate-900/90 backdrop-blur-lg border border-white/20 rounded-lg p-3 text-white shadow-xl w-md">
-            <h4 className="font-bold text-sm mb-1">
-              {currentPageDescription.title}
-            </h4>
-            <p className="text-xs text-gray-300 leading-relaxed">
-              {currentPageDescription.description}
-            </p>
-            <div className="text-xs text-gray-400 mt-2">
-              Click to{' '}
-              {opened ? `go to page ${number}` : `turn to page ${number + 1}`}
-            </div>
-          </div>
-        </Html>
-      )}
     </group>
   );
 };

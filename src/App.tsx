@@ -9,6 +9,7 @@ import Card from './components/Card';
 import { Suspense } from 'react';
 import { Experience } from './components/PortfolioBook/PortafolioExperience';
 import { Footer } from './components/Footer';
+import { UI as PortfolioUI } from './components/PortfolioBook/PortafolioUI';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -64,10 +65,135 @@ function App() {
               <h2 className="text-3xl font-bold text-white text-center mb-12">
                 Portfolio Book
               </h2>
-              <div className="text-center text-gray-300 mb-8">
-                <p>Explore my interactive portfolio book</p>
+
+              {/* Project Glossary - Above the book */}
+              <div className="mb-8">
+                <div className="bg-indigo-900/30 backdrop-blur-lg border border-white/10 rounded-xl p-6 shadow-xl">
+                  <h3 className="text-lg font-bold text-white text-center mb-6">
+                    📋 Project Glossary
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {/* Page 1 - Bike Project */}
+                    <div
+                      id="glossary-page-2"
+                      className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium text-blue-400">
+                          Page 1
+                        </span>
+                        <span className="text-xs text-gray-400">🚴‍♂️</span>
+                      </div>
+                      <h4 className="text-white font-semibold mb-2">
+                        3D Bike Configurator
+                      </h4>
+                      <p className="text-xs text-gray-300 mb-3">
+                        Modern bicycle e-commerce platform with React
+                      </p>
+                      <button
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+                        onClick={() =>
+                          window.open(
+                            'https://www.fresco-design.com/3d-bike-configurator',
+                            '_blank'
+                          )
+                        }
+                      >
+                        🌐 View Project
+                      </button>
+                    </div>
+
+                    {/* Page 2 - Polyjoule */}
+                    <div
+                      id="glossary-page-1"
+                      className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium text-blue-400">
+                          Page 2
+                        </span>
+                        <span className="text-xs text-gray-400">⚡</span>
+                      </div>
+                      <h4 className="text-white font-semibold mb-2">
+                        Polyjoule
+                      </h4>
+                      <p className="text-xs text-gray-300 mb-3">
+                        Energy management dashboard with TypeScript
+                      </p>
+                      <button
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+                        onClick={() =>
+                          window.open('https://www.polyjoule.com/', '_blank')
+                        }
+                      >
+                        🌐 View Project
+                      </button>
+                    </div>
+
+                    {/* Page 3 - Fresco Design */}
+                    <div
+                      id="glossary-page-3"
+                      className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium text-blue-400">
+                          Page 3
+                        </span>
+                        <span className="text-xs text-gray-400">🎨</span>
+                      </div>
+                      <h4 className="text-white font-semibold mb-2">
+                        Fresco Design
+                      </h4>
+                      <p className="text-xs text-gray-300 mb-3">
+                        Creative design studio website with animations
+                      </p>
+                      <button
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+                        onClick={() =>
+                          window.open(
+                            'https://www.fresco-design.com/',
+                            '_blank'
+                          )
+                        }
+                      >
+                        🌐 View Project
+                      </button>
+                    </div>
+
+                    {/* Page 4 - Fresco Design */}
+                    <div
+                      id="glossary-page-3"
+                      className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+                    >
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium text-blue-400">
+                          Page 4
+                        </span>
+                        <span className="text-xs text-gray-400">🎨</span>
+                      </div>
+                      <h4 className="text-white font-semibold mb-2">
+                        Fresco 3D Library
+                      </h4>
+                      <p className="text-xs text-gray-300 mb-3">
+                        3D model library with Three.js
+                      </p>
+                      <button
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+                        onClick={() =>
+                          window.open(
+                            'https://s3.us-east-1.amazonaws.com/fresco-augmented-reality.com/libs/demo/index.html',
+                            '_blank'
+                          )
+                        }
+                      >
+                        🌐 View Project
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="h-[600px] w-full relative">
+
+              <div className="h-[500px] w-full relative">
                 <Canvas
                   camera={{
                     fov: 45,
@@ -85,6 +211,14 @@ function App() {
                   <directionalLight position={[5, 5, 5]} intensity={0.8} />
                 </Canvas>
               </div>
+
+              {/* Portfolio Book Pagination UI */}
+              <div className="mt-8">
+                <PortfolioUI />
+              </div>
+
+              {/* Bottom spacing to avoid footer overlap */}
+              <div className="pb-20"></div>
             </div>
           </section>
 
