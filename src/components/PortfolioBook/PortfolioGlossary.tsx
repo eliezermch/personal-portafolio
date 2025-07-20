@@ -9,7 +9,7 @@ const PortfolioGlossary = () => {
           {/* Page 1 - Bike Project */}
           <div
             id="glossary-page-2"
-            className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+            className="flex flex-col justify-between bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-blue-400">Page 1</span>
@@ -23,7 +23,7 @@ const PortfolioGlossary = () => {
               Library.
             </p>
             <button
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
               onClick={() =>
                 window.open(
                   'https://www.fresco-design.com/3d-bike-configurator',
@@ -38,7 +38,7 @@ const PortfolioGlossary = () => {
           {/* Page 2 - Polyjoule */}
           <div
             id="glossary-page-1"
-            className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+            className="flex flex-col justify-between bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-blue-400">Page 2</span>
@@ -52,7 +52,7 @@ const PortfolioGlossary = () => {
               and visually engaging digital experience.
             </p>
             <button
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
               onClick={() =>
                 window.open('https://www.polyjoule.com/', '_blank')
               }
@@ -64,7 +64,7 @@ const PortfolioGlossary = () => {
           {/* Page 3 - Fresco Design */}
           <div
             id="glossary-page-3"
-            className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+            className="flex flex-col justify-between bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-blue-400">Page 3</span>
@@ -76,7 +76,7 @@ const PortfolioGlossary = () => {
               models and 3D visualizations.
             </p>
             <button
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
               onClick={() =>
                 window.open('https://www.fresco-design.com/', '_blank')
               }
@@ -88,7 +88,7 @@ const PortfolioGlossary = () => {
           {/* Page 4 - Fresco 3D Library */}
           <div
             id="glossary-page-4"
-            className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+            className="flex flex-col justify-between bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-blue-400">Page 4</span>
@@ -100,7 +100,7 @@ const PortfolioGlossary = () => {
               configurators
             </p>
             <button
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
               onClick={() =>
                 window.open(
                   'https://s3.us-east-1.amazonaws.com/fresco-augmented-reality.com/libs/demo/index.html',
@@ -115,7 +115,7 @@ const PortfolioGlossary = () => {
           {/* Page 5 - Nasa App */}
           <div
             id="glossary-page-5"
-            className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+            className="flex flex-col justify-between bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-blue-400">Page 5</span>
@@ -127,7 +127,7 @@ const PortfolioGlossary = () => {
               system
             </p>
             <button
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
               onClick={() =>
                 window.open('https://github.com/eliezermch/nasa_app', '_blank')
               }
@@ -139,7 +139,7 @@ const PortfolioGlossary = () => {
           {/* Page 6 - Netflix Clone */}
           <div
             id="glossary-page-6"
-            className="bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
+            className="flex flex-col justify-between bg-slate-800/50 border border-white/10 rounded-lg p-4 hover:bg-slate-700/50 transition-all duration-300"
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-medium text-blue-400">Page 6</span>
@@ -150,7 +150,7 @@ const PortfolioGlossary = () => {
               Netflix Clone Website with React.js and Hooks implementation
             </p>
             <button
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105"
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xs font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer"
               onClick={() =>
                 window.open('https://netflix-clone-e.vercel.app/', '_blank')
               }

@@ -17,18 +17,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className="
-        relative group
-        bg-indigo-900/20 backdrop-blur-md 
-        border border-white/10 
-        rounded-xl p-6 
-        shadow-xl hover:shadow-2xl
-        transition-all duration-300 ease-in-out
-        hover:scale-105 hover:border-white/20
-        hover:bg-indigo-900/25
-        cursor-pointer
-        @container
-      "
+      className="relative group bg-indigo-900/20 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out hover:scale-105 hover:border-white/20 hover:bg-indigo-900/25 @container"
       style={{
         boxShadow: `0 8px 32px rgb(0 0 0 / 0.2), 0 0 20px ${shadowColor}15`,
       }}
