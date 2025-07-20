@@ -5,7 +5,7 @@ import { useRef, useEffect } from 'react';
 export function Particles() {
   //   const { scene } = useThree();
 
-  const particleTexture1 = useLoader(THREE.TextureLoader, '../../assets/solar_sys/star1.png');
+  const particleTexture1 = useLoader(THREE.TextureLoader, '../assets/solar_sys/star1.png');
   const particleTexture2 = useLoader(THREE.TextureLoader, '../assets/solar_sys/star2.png');
   const particleTexture3 = useLoader(THREE.TextureLoader, '../assets/solar_sys/star3.png');
 
