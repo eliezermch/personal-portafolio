@@ -1,7 +1,7 @@
 const Profile = () => {
   return (
     <div className="w-full flex items-center justify-center gap-4 mt-20">
-      <div className="max-w-4xl gap-8 lg:gap-0 flex flex-col lg:flex-row items-center justify-between px-8">
+      <div className="max-w-5xl gap-8 lg:gap-0 flex flex-col lg:flex-row items-center justify-between px-8">
         <div className="w-full lg:w-[50%] flex flex-col items-center justify-center gap-4 text-center">
           <h1 className="text-5xl text font-bold text-indigo-600">
             Eliezer Chirino
