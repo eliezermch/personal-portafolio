@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Profile = () => {
   return (
     <div className="w-full flex items-center justify-center gap-4 mt-20">
