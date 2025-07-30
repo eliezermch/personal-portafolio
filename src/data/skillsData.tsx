@@ -76,6 +76,7 @@ export const skillsData = [
       '+2 year of experience with AWS - Cloud computing platform providing a wide range of services for scalable applications.',
     icon: <IconBrandAws size={28} />, // Placeholder icon, replace with AWS icon if available
     shadowColor: '#ff9900',
+    glowColor: '#ff9900',
   },
   {
     title: 'Three.js',
