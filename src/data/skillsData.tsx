@@ -6,7 +6,9 @@ import {
   // IconBrandJavascript,
   IconBrandNodejs,
   IconBrandPython,
-  // IconBrandGit,
+  IconBrandAws,
+  IconBrandThreejs,
+  IconBrandGit,
   // IconDatabase,
   // IconBrandFigma,
 } from '@tabler/icons-react';
@@ -68,14 +70,30 @@ export const skillsData = [
     shadowColor: '#3776ab',
     glowColor: '#3776ab',
   },
-  // {
-  //   title: 'Git',
-  //   description:
-  //     'Distributed version control system for tracking changes and collaboration.',
-  //   icon: <IconBrandGit size={28} />,
-  //   shadowColor: '#f05032',
-  //   glowColor: '#f05032',
-  // },
+  {
+    title: 'AWS',
+    description:
+      '+2 year of experience with AWS - Cloud computing platform providing a wide range of services for scalable applications.',
+    icon: <IconBrandAws size={28} />, // Placeholder icon, replace with AWS icon if available
+    shadowColor: '#ff9900',
+    glowColor: '#ff9900',
+  },
+  {
+    title: 'Three.js',
+    description:
+      '+2 year of experience with Three.js - JavaScript library for creating 3D graphics in the browser using WebGL.',
+    icon: <IconBrandThreejs size={28} />,
+    shadowColor: '#ffffff',
+    glowColor: '#000000',
+  },
+  {
+    title: 'Git',
+    description:
+      '+3 years of experience with Git - Distributed version control system for tracking changes and collaboration.',
+    icon: <IconBrandGit size={28} />,
+    shadowColor: '#f05032',
+    glowColor: '#f05032',
+  },
   // {
   //   title: 'Database',
   //   description:
