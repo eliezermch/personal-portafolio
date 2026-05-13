@@ -98,7 +98,7 @@ const NavBar = () => {
         </ul>
 
         {/* Right side: social icons + CV + hamburger */}
-        <div className="flex items-center gap-3 ml-auto">
+        <div className="flex items-center gap-3 ml-auto sm:ml-0">
           <a
             href="https://www.linkedin.com/in/eliezerchirino/"
             target="_blank"
