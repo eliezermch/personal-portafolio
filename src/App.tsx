@@ -4,7 +4,11 @@ import { Particles } from './components/Particles';
 import { Html } from '@react-three/drei';
 import { NavBar } from './components/NavBar';
 import { Profile } from './components/Profile';
-import { skillsData, skillCategories, type SkillCategory } from './data/skillsData';
+import {
+  skillsData,
+  skillCategories,
+  type SkillCategory,
+} from './data/skillsData';
 import Card from './components/Card';
 import { Suspense, useRef, useState } from 'react';
 import { Experience } from './components/PortfolioBook/PortafolioExperience';
@@ -74,7 +78,10 @@ function App() {
           </section>
 
           {/* Skills Section */}
-          <div id="skills" className="container max-w-4xl mx-auto flex flex-col py-8 px-8 mt-8 gap-6">
+          <div
+            id="skills"
+            className="container max-w-4xl mx-auto flex flex-col py-8 px-4 sm:px-8 mt-8 gap-6"
+          >
             <RevealOnScroll>
               <h2 className="text-3xl font-bold text-white text-center">
                 Skills &amp; Technologies
@@ -130,7 +137,7 @@ function App() {
 
               {/* 3D Experience — swipe enabled */}
               <div
-                className="h-[500px] w-full relative"
+                className="h-[280px] sm:h-[380px] md:h-[500px] w-full relative"
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
               >

@@ -9,7 +9,12 @@ const TITLES = [
   'TypeScript Enthusiast',
 ];
 
-function useTypewriter(texts: string[], typeSpeed = 75, deleteSpeed = 40, pause = 1600) {
+function useTypewriter(
+  texts: string[],
+  typeSpeed = 75,
+  deleteSpeed = 40,
+  pause = 1600
+) {
   const [displayed, setDisplayed] = useState('');
   const [idx, setIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
@@ -18,7 +23,10 @@ function useTypewriter(texts: string[], typeSpeed = 75, deleteSpeed = 40, pause 
     const current = texts[idx];
 
     if (!deleting && displayed.length < current.length) {
-      const t = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), typeSpeed);
+      const t = setTimeout(
+        () => setDisplayed(current.slice(0, displayed.length + 1)),
+        typeSpeed
+      );
       return () => clearTimeout(t);
     }
 
@@ -28,7 +36,10 @@ function useTypewriter(texts: string[], typeSpeed = 75, deleteSpeed = 40, pause 
     }
 
     if (deleting && displayed.length > 0) {
-      const t = setTimeout(() => setDisplayed(displayed.slice(0, -1)), deleteSpeed);
+      const t = setTimeout(
+        () => setDisplayed(displayed.slice(0, -1)),
+        deleteSpeed
+      );
       return () => clearTimeout(t);
     }
 
@@ -42,7 +53,15 @@ function useTypewriter(texts: string[], typeSpeed = 75, deleteSpeed = 40, pause 
 }
 
 // ── Animated counter ───────────────────────────────────────────────────────────
-function Counter({ value, suffix, label }: { value: number; suffix: string; label: string }) {
+function Counter({
+  value,
+  suffix,
+  label,
+}: {
+  value: number;
+  suffix: string;
+  label: string;
+}) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -78,7 +97,9 @@ function Counter({ value, suffix, label }: { value: number; suffix: string; labe
         {count}
         {suffix}
       </span>
-      <span className="text-xs text-gray-400 tracking-wide uppercase">{label}</span>
+      <span className="text-xs text-gray-400 tracking-wide uppercase">
+        {label}
+      </span>
     </div>
   );
 }
@@ -94,12 +115,11 @@ const Profile = () => {
   const title = useTypewriter(TITLES);
 
   return (
-    <div className="w-full flex items-center justify-center mt-16 px-8">
-      <div className="max-w-5xl w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
-
+    <div className="w-full flex items-center justify-center mt-8 lg:mt-16 px-4 sm:px-8">
+      <div className="max-w-5xl w-full flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-8">
         {/* ── Left: text content ── */}
         <div className="w-full lg:w-[55%] flex flex-col items-center lg:items-start gap-5 text-center lg:text-left">
-          <h1 className="text-5xl font-bold text-indigo-500 leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-indigo-500 leading-tight">
             Eliezer Chirino
           </h1>
 
@@ -110,14 +130,15 @@ const Profile = () => {
           </div>
 
           <p className="text-base leading-7 text-gray-300 max-w-lg">
-            I am a passionate Software Developer driven by curiosity, creativity,
-            and a strong sense of purpose. I love building clean, efficient, and
-            meaningful digital experiences — always striving to write better code,
-            design better systems, and grow through every challenge.
+            I am a passionate Software Developer driven by curiosity,
+            creativity, and a strong sense of purpose. I love building clean,
+            efficient, and meaningful digital experiences — always striving to
+            write better code, design better systems, and grow through every
+            challenge.
           </p>
 
           {/* Animated stat counters */}
-          <div className="flex items-center gap-8 py-2">
+          <div className="flex items-center gap-4 sm:gap-8 py-2">
             {STATS.map((s) => (
               <Counter key={s.label} {...s} />
             ))}
@@ -138,21 +159,22 @@ const Profile = () => {
         <div className="w-full lg:w-[45%] flex items-center justify-center">
           <div className="relative">
             {/* Outer pulsing glow */}
-            <div className="absolute inset-0 rounded-full bg-indigo-500/20 animate-pulse"
-              style={{ animationDuration: '3s' }} />
+            <div
+              className="absolute inset-0 rounded-full bg-indigo-500/20 animate-pulse"
+              style={{ animationDuration: '3s' }}
+            />
             {/* Static accent ring */}
             <div className="absolute inset-[-6px] rounded-full border-2 border-indigo-500/40" />
             {/* Inner subtle ring */}
             <div className="absolute inset-[-14px] rounded-full border border-indigo-500/15" />
             {/* Photo */}
             <img
-              className="relative z-10 w-[260px] h-[260px] rounded-full object-cover shadow-2xl"
+              className="relative z-10 w-[180px] h-[180px] sm:w-[260px] sm:h-[260px] rounded-full object-cover shadow-2xl"
               src="/assets/headshot/eliezer_headshot.JPG"
               alt="Eliezer Chirino"
             />
           </div>
         </div>
-
       </div>
     </div>
   );

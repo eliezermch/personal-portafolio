@@ -4,6 +4,8 @@ import {
   IconBrandLinkedin,
   IconDownload,
   IconMail,
+  IconMenu2,
+  IconX,
 } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
 
@@ -17,6 +19,7 @@ const NAV_SECTIONS = [
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('profile');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Scroll-aware background — listens on both window and the drei Html wrapper
   useEffect(() => {
@@ -56,6 +59,7 @@ const NavBar = () => {
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
   };
 
   return (
@@ -72,7 +76,7 @@ const NavBar = () => {
           Eliezer Chirino
         </span>
 
-        {/* Section nav links */}
+        {/* Section nav links — desktop */}
         <ul className="hidden sm:flex items-center gap-7 text-sm">
           {NAV_SECTIONS.map(({ id, label }) => (
             <li key={id}>
@@ -85,7 +89,6 @@ const NavBar = () => {
                 }`}
               >
                 {label}
-                {/* Active underline */}
                 {activeSection === id && (
                   <span className="absolute -bottom-1 left-0 right-0 h-px bg-indigo-400 rounded-full" />
                 )}
@@ -94,8 +97,8 @@ const NavBar = () => {
           ))}
         </ul>
 
-        {/* Social icons + CV */}
-        <div className="flex items-center gap-3">
+        {/* Right side: social icons + CV + hamburger */}
+        <div className="flex items-center gap-3 ml-auto">
           <a
             href="https://www.linkedin.com/in/eliezerchirino/"
             target="_blank"
@@ -134,8 +137,39 @@ const NavBar = () => {
             <IconDownload size={13} />
             CV
           </a>
+
+          {/* Hamburger — mobile only */}
+          <button
+            onClick={() => setMenuOpen((o) => !o)}
+            className="sm:hidden ml-1 text-white hover:text-indigo-400 transition-colors duration-200 cursor-pointer"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <IconX size={22} /> : <IconMenu2 size={22} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile dropdown menu */}
+      {menuOpen && (
+        <div className="sm:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10">
+          <ul className="flex flex-col items-center gap-1 py-4">
+            {NAV_SECTIONS.map(({ id, label }) => (
+              <li key={id} className="w-full text-center">
+                <button
+                  onClick={() => scrollTo(id)}
+                  className={`w-full py-3 text-sm font-medium transition-colors duration-200 cursor-pointer ${
+                    activeSection === id
+                      ? 'text-indigo-400'
+                      : 'text-gray-400 hover:text-white'
+                  }`}
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

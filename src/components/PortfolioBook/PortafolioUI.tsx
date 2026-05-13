@@ -146,7 +146,7 @@ export const UI = () => {
 
       <div className="w-full flex flex-col items-center gap-4">
         {/* Visit Project buttons */}
-        <div className="h-10 flex items-center justify-center gap-6">
+        <div className="min-h-10 flex items-center justify-center gap-3 flex-wrap">
           {leftDetail && (
             <button
               key={`left-${page}`}
@@ -168,8 +168,8 @@ export const UI = () => {
         </div>
 
         {/* Thumbnail strip + Prev / Next */}
-        <div className="bg-indigo-900/40 backdrop-blur-lg border border-white/10 rounded-xl p-4 shadow-xl">
-          <div className="flex items-end justify-center gap-3 flex-wrap">
+        <div className="bg-indigo-900/40 backdrop-blur-lg border border-white/10 rounded-xl p-4 shadow-xl w-full max-w-full">
+          <div className="flex items-end justify-start sm:justify-center gap-3 overflow-x-auto pb-1 scrollbar-none">
             {/* Prev */}
             <button
               onClick={() => setPage((p) => Math.max(p - 1, 0))}
