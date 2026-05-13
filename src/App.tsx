@@ -4,21 +4,48 @@ import { Particles } from './components/Particles';
 import { Html } from '@react-three/drei';
 import { NavBar } from './components/NavBar';
 import { Profile } from './components/Profile';
-import { skillsData } from './data/skillsData';
+import { skillsData, skillCategories, type SkillCategory } from './data/skillsData';
 import Card from './components/Card';
-import { Suspense } from 'react';
+import { Suspense, useRef, useState } from 'react';
 import { Experience } from './components/PortfolioBook/PortafolioExperience';
 import { Footer } from './components/Footer';
 import { UI as PortfolioUI } from './components/PortfolioBook/PortafolioUI';
-import { PortfolioGlossary } from './components/PortfolioBook/PortfolioGlossary';
+import { Timeline } from './components/Timeline';
+import { useAtom } from 'jotai';
+import { pageAtom, pages } from './components/PortfolioBook/portfolioData';
+import { RevealOnScroll } from './components/RevealOnScroll';
+import { LoadingScreen } from './components/LoadingScreen';
+import { CursorGlow } from './components/CursorGlow';
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const [activeCategory, setActiveCategory] = useState<SkillCategory>('All');
+  const [, setPage] = useAtom(pageAtom);
+  const touchStartX = useRef(0);
+
+  const filteredSkills =
+    activeCategory === 'All'
+      ? skillsData
+      : skillsData.filter((s) => s.category === activeCategory);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const delta = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 50) {
+      if (delta > 0) setPage((p) => Math.min(p + 1, pages.length));
+      else setPage((p) => Math.max(p - 1, 0));
+    }
+  };
 
   return (
     <>
+      {/* Global UX — rendered via portals to document.body */}
+      <LoadingScreen />
+      <CursorGlow />
+
       <Canvas
-        // scene={{ background: cubeTexture }}
         camera={{
           fov: 45,
           near: 0.1,
@@ -42,43 +69,77 @@ function App() {
         <Html wrapperClass="html-wrapper">
           <NavBar />
 
-          <Profile />
+          <section id="profile">
+            <Profile />
+          </section>
 
-          {/* Skills Grid */}
-          <div className="container max-w-4xl mx-auto flex py-8 px-8 mt-4">
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-              {skillsData.map((skill, index) => (
+          {/* Skills Section */}
+          <div id="skills" className="container max-w-4xl mx-auto flex flex-col py-8 px-8 mt-8 gap-6">
+            <RevealOnScroll>
+              <h2 className="text-3xl font-bold text-white text-center">
+                Skills &amp; Technologies
+              </h2>
+            </RevealOnScroll>
+
+            {/* Filter bar */}
+            <RevealOnScroll delay={100}>
+              <div className="flex items-center justify-center gap-2 flex-wrap">
+                {skillCategories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 cursor-pointer ${
+                      activeCategory === cat
+                        ? 'bg-indigo-600 text-white border-indigo-500 shadow-lg'
+                        : 'bg-slate-800/50 text-gray-400 border-white/10 hover:bg-slate-700/50 hover:text-gray-200'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </RevealOnScroll>
+
+            {/* Cards */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredSkills.map((skill, index) => (
                 <Card
-                  key={index}
+                  key={skill.title}
+                  index={index}
                   title={skill.title}
                   description={skill.description}
                   icon={skill.icon}
                   shadowColor={skill.shadowColor}
                   glowColor={skill.glowColor}
+                  level={skill.level}
                 />
               ))}
             </div>
           </div>
 
-          {/* Portfolio Book Section - Seamlessly integrated */}
-          <section className="w-full py-16 px-4">
+          <Timeline />
+
+          {/* Portfolio Book Section */}
+          <section id="portfolio" className="w-full py-16 px-4">
             <div className="w-full">
-              <h2 className="text-3xl font-bold text-white text-center mb-12">
-                Portfolio Book
-              </h2>
+              <RevealOnScroll>
+                <h2 className="text-3xl font-bold text-white text-center mb-12">
+                  Portfolio Book
+                </h2>
+              </RevealOnScroll>
 
-              {/* Project Glossary - Above the book */}
-              <PortfolioGlossary />
-
-              {/* 3D Experience */}
-
-              <div className="h-[500px] w-full relative">
+              {/* 3D Experience — swipe enabled */}
+              <div
+                className="h-[500px] w-full relative"
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+              >
                 <Canvas
                   camera={{
                     fov: 45,
                     near: 0.1,
                     far: 100,
-                    position: [0, 2, 8],
+                    position: [0, 5, 14],
                   }}
                   className="w-full h-full"
                   style={{ background: 'transparent' }}
@@ -96,10 +157,12 @@ function App() {
                 <PortfolioUI />
               </div>
 
-              {/* Bottom spacing to avoid footer overlap */}
               <div className="pb-20"></div>
             </div>
           </section>
+
+          {/* ContactForm hidden — uncomment to restore */}
+          {/* <ContactForm /> */}
 
           <Footer />
         </Html>
