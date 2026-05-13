@@ -1,8 +1,29 @@
 import { Environment, Float } from '@react-three/drei';
+import { useFrame, useThree } from '@react-three/fiber';
+import { useAtom } from 'jotai';
+import { easing } from 'maath';
+import { pageAtom, pages } from './portfolioData';
 import { Book } from './PortafolioBook';
+
+const CameraRig = () => {
+  const { camera } = useThree();
+  const [page] = useAtom(pageAtom);
+
+  useFrame((_, delta) => {
+    const bookOpen = page > 0 && page < pages.length;
+    const targetY = bookOpen ? 1.5 : 2;
+    const targetZ = bookOpen ? 7 : 8.5;
+    easing.damp3(camera.position, [0, targetY, targetZ], 0.5, delta);
+    camera.lookAt(0, 0, 0);
+  });
+
+  return null;
+};
+
 export const Experience = () => {
   return (
     <>
+      <CameraRig />
       <Float
         rotation-x={-Math.PI / 4}
         floatIntensity={1}
